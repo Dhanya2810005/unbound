@@ -127,7 +127,7 @@ async def main():
     # Check API key is set
     api_key = os.getenv("UNBOUND_API_KEY")
     if not api_key:
-        print("\n⚠️  UNBOUND_API_KEY not set!")
+        print("\n  UNBOUND_API_KEY not set!")
         print("Set it with: $env:UNBOUND_API_KEY = 'your-key'")
         print("Then run this test again.\n")
         return
@@ -142,15 +142,15 @@ async def main():
         await test_invalid_api_key()
         
         print("\n" + "=" * 60)
-        print("✅ All LLM client tests passed!")
+        print(" All LLM client tests passed!")
         print("=" * 60)
         
     except UnboundAPIError as e:
-        print(f"\n❌ API Error: {e.message}")
+        print(f"\n API Error: {e.message}")
         if e.status_code:
             print(f"   Status code: {e.status_code}")
     except Exception as e:
-        print(f"\n❌ Unexpected error: {e}")
+        print(f"\n Unexpected error: {e}")
         raise
 
 
