@@ -21,10 +21,7 @@ from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field
 
-
-# =============================================================================
 # ENUMS — Explicit states prevent typos and enable IDE autocomplete
-# =============================================================================
 
 class ValidationType(str, Enum):
     """
@@ -88,9 +85,7 @@ class ModelName(str, Enum):
     KIMI_K2P5 = "kimi-k2p5"                      # Explanations, summaries
 
 
-# =============================================================================
 # VALIDATION RULE — Defines how to check LLM output
-# =============================================================================
 
 class ValidationRule(BaseModel):
     """
@@ -114,9 +109,7 @@ class ValidationRule(BaseModel):
         frozen = True  # Validation rules are immutable value objects
 
 
-# =============================================================================
 # STEP — A single unit of work in a workflow
-# =============================================================================
 
 class Step(BaseModel):
     """
@@ -148,9 +141,9 @@ class Step(BaseModel):
         frozen = True
 
 
-# =============================================================================
+
 # WORKFLOW — A sequence of steps
-# =============================================================================
+
 
 class Workflow(BaseModel):
     """
@@ -174,9 +167,9 @@ class Workflow(BaseModel):
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
 
-# =============================================================================
+
 # STEP RUN — Execution record for a single step
-# =============================================================================
+
 
 class StepRun(BaseModel):
     """
@@ -206,9 +199,8 @@ class StepRun(BaseModel):
     finished_at: Optional[datetime] = None
 
 
-# =============================================================================
 # WORKFLOW RUN — Execution record for an entire workflow
-# =============================================================================
+
 
 class WorkflowRun(BaseModel):
     """
@@ -240,9 +232,7 @@ class WorkflowRun(BaseModel):
     finished_at: Optional[datetime] = None
 
 
-# =============================================================================
 # EXECUTION EVENT — WebSocket message payload
-# =============================================================================
 
 class ExecutionEvent(BaseModel):
     """
@@ -277,9 +267,7 @@ class ExecutionEvent(BaseModel):
         }
 
 
-# =============================================================================
 # API REQUEST/RESPONSE MODELS — For FastAPI endpoints
-# =============================================================================
 
 class WorkflowCreate(BaseModel):
     """Request body for creating a workflow."""
