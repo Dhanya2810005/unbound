@@ -1,0 +1,408 @@
+/* 
+ * Styles for the Agentic Workflow Builder
+ * Clean, minimal design for hackathon demo
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #334155;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Layout */
+.main-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+}
+
+/* Sidebar - Workflow List */
+.sidebar {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.sidebar h2 {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.workflow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.workflow-item {
+  padding: 12px 15px;
+  background: #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.workflow-item:hover {
+  background: #475569;
+}
+
+.workflow-item.selected {
+  border-color: #3b82f6;
+  background: #1e3a5f;
+}
+
+.workflow-item h3 {
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+}
+
+.workflow-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Panel */
+.panel {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.panel h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Form elements */
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+}
+
+.btn-secondary {
+  background: #475569;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #64748b;
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #059669;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Steps Editor */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.step-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.step-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+}
+
+.step-number {
+  background: #3b82f6;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Validation Rules */
+.validation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.validation-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e293b;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.validation-item select {
+  width: auto;
+  min-width: 150px;
+}
+
+.validation-item input {
+  flex: 1;
+}
+
+/* Execution Panel */
+.execution-panel {
+  border: 2px solid #334155;
+}
+
+.execution-panel.running {
+  border-color: #3b82f6;
+}
+
+.execution-panel.completed {
+  border-color: #10b981;
+}
+
+.execution-panel.failed {
+  border-color: #ef4444;
+}
+
+/* Event Log */
+.event-log {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+}
+
+.event-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  gap: 10px;
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+.event-type {
+  font-weight: bold;
+  min-width: 150px;
+}
+
+.event-type.run_started { color: #3b82f6; }
+.event-type.step_started { color: #8b5cf6; }
+.event-type.llm_output { color: #f59e0b; }
+.event-type.validation_passed { color: #10b981; }
+.event-type.validation_failed { color: #ef4444; }
+.event-type.step_completed { color: #10b981; }
+.event-type.step_failed { color: #ef4444; }
+.event-type.run_completed { color: #10b981; }
+.event-type.run_failed { color: #ef4444; }
+
+.event-payload {
+  color: #94a3b8;
+  word-break: break-all;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.pending { background: #475569; }
+.status-badge.running { background: #3b82f6; }
+.status-badge.completed { background: #10b981; }
+.status-badge.failed { background: #ef4444; }
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+}
+
+.empty-state p {
+  margin: 10px 0;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #64748b;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #334155;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

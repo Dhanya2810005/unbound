@@ -1,0 +1,9 @@
+# Core dependencies for Agentic Workflow Builder
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+httpx[http2]>=0.26.0     # Async HTTP client for Unbound API (HTTP/2 enabled)
+sqlalchemy>=2.0.25      # SQLite ORM
+aiosqlite>=0.19.0       # Async SQLite driver
+python-dotenv>=1.0.0    # Environment variable loading
+websockets>=12.0        # WebSocket support (via FastAPI)

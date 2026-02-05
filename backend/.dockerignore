@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.virtual/
+.env
+.env.*
+.pytest_cache/
+.mypy_cache/
+
+# local artifacts
+*.db
+*.sqlite

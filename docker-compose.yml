@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      # set this in your shell or in an .env file next to docker-compose.yml
+      - UNBOUND_API_KEY=${UNBOUND_API_KEY}
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - REACT_APP_API_URL=http://localhost:8000
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
